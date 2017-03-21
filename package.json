@@ -1,0 +1,28 @@
+{
+  "name": "kingdom-come",
+  "version": "0.0.0",
+  "description": "Homepage for the book Kingdom Come by Justin Coogle",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack && node-sass index.scss dist/bundle.css",
+    "serve": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twig1337/kingdom-come.git"
+  },
+  "author": "Thomas Ellsworth <taellsworth@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twig1337/kingdom-come/issues"
+  },
+  "homepage": "https://github.com/twig1337/kingdom-come#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "node-sass": "^4.5.1"
+  }
+}
