@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack && node-sass index.scss dist/bundle.css",
+    "build": "webpack",
+    "build-prod": "webpack -p --progress",
     "serve": "http-server"
   },
   "repository": {
@@ -19,10 +20,16 @@
   },
   "homepage": "https://github.com/twig1337/kingdom-come#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6"
+    "bootstrap": "^4.0.0-alpha.6",
+    "tether": "^1.4.0"
   },
   "devDependencies": {
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.0",
     "http-server": "^0.9.0",
-    "node-sass": "^4.5.1"
+    "node-sass": "^4.5.1",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.0",
+    "webpack": "^2.3.1"
   }
 }
