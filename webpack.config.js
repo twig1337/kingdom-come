@@ -9,7 +9,7 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: "./index.js",
+  entry: "./scripts/index.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist")
