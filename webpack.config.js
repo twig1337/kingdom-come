@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   entry: "./scripts/index.js",
   output: {
-    filename: "main.js",
+    filename: "bundle.js",
     path: path.resolve(__dirname, "dist")
   },
   module: {

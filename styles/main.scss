@@ -5,8 +5,7 @@
 $brand-secondary: #B8860B;
 
 /* Override default variables. */
-$brand-primary: red;
-//$brand-primary: #7A5F70;
+$brand-primary: #7A5F70;
 $body-bg: $brand-primary;
 
 /* Import Bootstrap 4 */
@@ -61,5 +60,21 @@ $body-bg: $brand-primary;
 
   &secondary {
     background: $brand-secondary;
+  }
+}
+
+.border-secondary {
+  border: 7px solid $brand-secondary;
+  &-top {
+    border-top: 7px solid $brand-secondary;
+  }
+  &-bottom {
+    border-bottom: 7px solid $brand-secondary;
+  }
+  &-left {
+    border-left: 7px solid $brand-secondary;
+  }
+  &-right {
+    border-right: 7px solid $brand-secondary;
   }
 }
