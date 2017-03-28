@@ -5,9 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "build-prod": "webpack -p --progress",
-    "serve": ""
+    "build": "webpack --progress --production",
+    "serve": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "node-sass": "^4.5.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.0",
-    "webpack": "^2.3.1"
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }
