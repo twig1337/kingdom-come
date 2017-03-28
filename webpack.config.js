@@ -3,7 +3,7 @@ const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash].css",
+  filename: "main.css",
   disable: process.env.NODE_ENV === "development"
 });
 
@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   entry: "./scripts/index.js",
   output: {
-    filename: "bundle.js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist")
   },
   module: {
