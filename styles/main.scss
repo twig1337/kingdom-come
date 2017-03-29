@@ -78,3 +78,9 @@ $body-bg: $brand-primary;
     border-right: 7px solid $brand-secondary;
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    @extend .p-0;
+  }
+}
