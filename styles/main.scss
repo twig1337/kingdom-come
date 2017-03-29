@@ -45,12 +45,16 @@ $body-bg: $brand-primary;
 
 #banner-content {
   text-align: center;
-  padding: 9em;
+  padding: 5em;
   width: 100%;
   background: rgba(0,0,0,0.3);
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+
+  > img {
+    height: 50vh;
+  }
 }
 
 .bg- {
@@ -79,8 +83,16 @@ $body-bg: $brand-primary;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+  #banner-content {
+    padding: 2em;
+  }
+
   .container {
-    @extend .p-0;
+    padding: 0;
+
+    > .row > .col {
+      padding: 0;
+    }
   }
 }
