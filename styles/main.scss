@@ -12,8 +12,8 @@ $body-bg: $brand-primary;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 /* Custom styling */
-/* Banner */
-#banner {
+/* Storm Background */
+#storm-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,11 +21,8 @@ $body-bg: $brand-primary;
   height: 100%;
   overflow: hidden;
 
-  background-image: url('/assets/img/vatican-storm.jpg');
+  background: url('/assets/img/vatican-storm.jpg') no-repeat center;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
 
   &:before {
     content: '';
