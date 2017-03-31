@@ -12,31 +12,37 @@
     color: #ababab;
   }
 
-
   #intro-quote-line-one {
     @extend .float-right;
   }
 
   #intro-quote-line-two {
     @extend .float-left;
-
-    &.revealed {
-      .fadeIn;
-    }
-
-    .text-blood {
-      transition-duration: 5s;
-
-      &.revealed {
-        color: #8A0707;
-      }
-    }
   }
 
   #intro-quote-line-citation {
     @extend .float-right;
 
     font-size: 18px;
+  }
+
+  &.revealed {
+    #intro-quote-line-one {
+      @include add-animation('fadeIn', 5s, 1s);
+    }
+
+    #intro-quote-line-two {
+      @include add-animation('fadeIn', 5s, 3s);
+
+      .text-blood {
+        color: #8A0707;
+        transition: all 5s ease 6s;
+      }
+    }
+
+    #intro-quote-line-citation {
+      @include add-animation('fadeIn', 5s, 3s);
+    }
   }
 
   @media (max-width: 992px) {

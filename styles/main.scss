@@ -10,15 +10,14 @@ $body-bg: $brand-primary;
 
 /* Import Third Party Libraries */
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import "../node_modules/animate.css/animate.min.css";
+@import "animate";
+
+/* Custom Mixins */
+@import "mixins";
 
 /* General Custom Styles */
 body {
   position: relative;
-}
-
-.animated {
-  transition: all 300ms ease;
 }
 
 .bg- {

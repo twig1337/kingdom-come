@@ -3,7 +3,7 @@ require('./../styles/main.scss');
 require('bootstrap');
 
 $(document).ready(function() {
-  var $animation_elements = $('.animated');
+  var $animation_elements = $('.animation-scrollspy');
   var $window = $(window);
 
   function checkElementsVisible() {
