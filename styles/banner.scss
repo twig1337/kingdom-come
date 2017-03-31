@@ -1,0 +1,13 @@
+#banner-content {
+  text-align: center;
+  padding: 5em;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+
+  > img {
+    height: 50vh;
+  }
+}
