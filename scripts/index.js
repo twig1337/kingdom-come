@@ -2,28 +2,35 @@ require('./../index.html');
 require('./../styles/main.scss');
 require('bootstrap');
 
+const $ = require('jquery');
+const {TweenMax} = require('gsap');
+
 $(document).ready(function() {
-  var $animation_elements = $('.animation-scrollspy');
-  var $window = $(window);
+  const w = $(window);
+  w.on('scroll resize', {w, elements: $('.animation-scrollspy')}, triggerVisibleAnimationElements);
+  w.trigger('scroll');
 
-  function checkElementsVisible() {
-    var window_height = $window.height();
-    var window_top_position = $window.scrollTop();
-    var window_bottom_position = (window_top_position + window_height);
 
-    $.each($animation_elements, function() {
-      var $element = $(this);
-      var element_height = $element.outerHeight();
-      var element_top_position = $element.offset().top;
-      var element_bottom_position = (element_top_position + element_height);
-
-      //check to see if this current container is within viewport
-      if (element_bottom_position >= window_top_position && element_top_position <= window_bottom_position) {
-        $element.addClass('revealed');
-      }
-    });
-  }
-
-  $window.on('scroll resize', checkElementsVisible);
-  $window.trigger('scroll');
+  TweenMax.to('#intro-quote-container', 2, {});
 });
+
+/**
+ * A function to trigger animations on elements when they are fully visible in the window.
+ * @param e
+ */
+function triggerVisibleAnimationElements(e) {
+  const w = e.data.w;
+  const windowTop = w.scrollTop();
+  const windowBottom = windowTop + w.height();
+
+  $.each(e.data.elements, function() {
+    let element = $(this);
+    let elementTop = element.offset().top;
+    let elementBottom = (elementTop + element.outerHeight());
+
+    // Is the element fully visible within the viewport?
+    if (elementBottom >= windowTop && elementTop <= windowBottom) {
+      element.addClass('revealed');
+    }
+  });
+}
