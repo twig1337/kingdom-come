@@ -1,36 +1,21 @@
+/* global TweenMax, Back */
+
 require('./../index.html');
 require('./../styles/main.scss');
 require('bootstrap');
+require('gsap');
+
+import ScrollSpy from './scroll-spy';
 
 const $ = require('jquery');
-const {TweenMax} = require('gsap');
+const scrollSpy = new ScrollSpy();
 
-$(document).ready(function() {
-  const w = $(window);
-  w.on('scroll resize', {w, elements: $('.animation-scrollspy')}, triggerVisibleAnimationElements);
-  w.trigger('scroll');
-
-
-  TweenMax.to('#intro-quote-container', 2, {});
-});
-
-/**
- * A function to trigger animations on elements when they are fully visible in the window.
- * @param e
- */
-function triggerVisibleAnimationElements(e) {
-  const w = e.data.w;
-  const windowTop = w.scrollTop();
-  const windowBottom = windowTop + w.height();
-
-  $.each(e.data.elements, function() {
-    let element = $(this);
-    let elementTop = element.offset().top;
-    let elementBottom = (elementTop + element.outerHeight());
-
-    // Is the element fully visible within the viewport?
-    if (elementBottom >= windowTop && elementTop <= windowBottom) {
-      element.addClass('revealed');
-    }
-  });
-}
+let quoteLineOne = $('#intro-quote-line-one');
+scrollSpy.add(quoteLineOne, () =>
+  TweenMax.to(quoteLineOne, 3, {
+    right: 0,
+    top: 0,
+    opacity: 1,
+    ease: Power1.easeOut
+  })
+);

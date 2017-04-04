@@ -4,6 +4,9 @@
     @extend .bg-white;
     @extend .border-secondary-top;
 
+    position: relative;
+    overflow: hidden;
+
     padding: 50px 80px 60px 80px;
 
     font-family: 'Requiem', serif;
@@ -13,26 +16,33 @@
   }
 
   #intro-quote-line-one {
-    @extend .float-right;
+    position: absolute;
+    top: -25px;
+    right: 100px;
+    opacity: 0;
   }
 
   #intro-quote-line-two {
-    @extend .float-left;
+    position: absolute;
+    opacity: 0;
+    //left: -800px;
   }
 
   #intro-quote-line-citation {
-    @extend .float-right;
+    position: absolute;
+    opacity: 0;
+    //right: -800px;
 
     font-size: 18px;
   }
 
   &.revealed {
     #intro-quote-line-one {
-      @include add-animation('fadeIn', 5s, 1s);
+      //@include add-animation('fadeIn', 5s, 1s);
     }
 
     #intro-quote-line-two {
-      @include add-animation('fadeIn', 5s, 3s);
+      //@include add-animation('fadeIn', 5s, 3s);
 
       .text-blood {
         color: #8A0707;
@@ -41,7 +51,7 @@
     }
 
     #intro-quote-line-citation {
-      @include add-animation('fadeIn', 5s, 3s);
+      //@include add-animation('fadeIn', 5s, 3s);
     }
   }
 
@@ -58,7 +68,7 @@
     #intro-quote-line-one,
     #intro-quote-line-two,
     #intro-quote-line-citation {
-      float: none !important;
+      //float: none !important;
     }
   }
 }
