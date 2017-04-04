@@ -1,17 +1,12 @@
-const $ = require('jquery');
+import $ from 'jquery';
 
 export default class {
   constructor() {
     this._window = $(window);
     this._watchedElements = [];
-    let bob = () => {
-      console.log(this);
-    };
-
-    bob();
 
     $(document).ready(() => {
-      this._window.on('scroll resize', this._triggerVisibleAnimationElements);
+      this._window.on('scroll resize', () => this._triggerVisibleAnimationElements());
       this._window.trigger('scroll');
     });
   }

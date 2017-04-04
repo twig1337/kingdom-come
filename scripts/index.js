@@ -1,13 +1,13 @@
 /* global TweenMax, Back */
 
-require('./../index.html');
-require('./../styles/main.scss');
-require('bootstrap');
-require('gsap');
+import './../index.html';
+import './../styles/main.scss';
 
+import 'bootstrap';
+import 'gsap';
+import $ from 'jquery';
 import ScrollSpy from './scroll-spy';
 
-const $ = require('jquery');
 const scrollSpy = new ScrollSpy();
 
 let quoteLineOne = $('#intro-quote-line-one');

@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/twig1337/kingdom-come#readme",
   "dependencies": {
-    "babel-polyfill": "^6.23.0",
     "bootstrap": "^4.0.0-alpha.6",
     "gsap": "^1.19.1",
     "tether": "^1.4.0"
