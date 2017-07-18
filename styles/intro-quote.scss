@@ -18,41 +18,28 @@
   #intro-quote-line-one {
     position: absolute;
     top: -25px;
-    right: 100px;
+    right: 0;
     opacity: 0;
   }
 
   #intro-quote-line-two {
     position: absolute;
+    top: 45px;
+    left: -30px;
     opacity: 0;
-    //left: -800px;
   }
 
-  #intro-quote-line-citation {
+  #intro-quote-citation {
     position: absolute;
-    opacity: 0;
-    //right: -800px;
+    top: 90px;
+    right: 0;
 
+    opacity: 0;
     font-size: 18px;
   }
 
-  &.revealed {
-    #intro-quote-line-one {
-      //@include add-animation('fadeIn', 5s, 1s);
-    }
-
-    #intro-quote-line-two {
-      //@include add-animation('fadeIn', 5s, 3s);
-
-      .text-blood {
-        color: #8A0707;
-        transition: all 5s ease 6s;
-      }
-    }
-
-    #intro-quote-line-citation {
-      //@include add-animation('fadeIn', 5s, 3s);
-    }
+  #demon-highlight {
+    font-size: 26px;
   }
 
   @media (max-width: 992px) {
@@ -63,12 +50,6 @@
 
       font-size: 20px;
       line-height: 40px;
-    }
-
-    #intro-quote-line-one,
-    #intro-quote-line-two,
-    #intro-quote-line-citation {
-      //float: none !important;
     }
   }
 }
