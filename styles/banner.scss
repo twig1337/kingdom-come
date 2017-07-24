@@ -11,3 +11,13 @@
     height: 50vh;
   }
 }
+
+@media (max-width: 576px) {
+  #banner-content {
+    padding: 2em;
+  }
+
+  .container {
+    padding: 0;
+  }
+}

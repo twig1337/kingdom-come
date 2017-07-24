@@ -10,10 +10,6 @@ $body-bg: $brand-primary;
 
 /* Import Third Party Libraries */
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import "animate";
-
-/* Custom Mixins */
-@import "mixins";
 
 /* General Custom Styles */
 body {
@@ -46,14 +42,8 @@ body {
   }
 }
 
-@media (max-width: 576px) {
-  #banner-content {
-    padding: 2em;
-  }
-
-  .container {
-    padding: 0;
-  }
+footer .col {
+  height: 100px;
 }
 
 /* Imports */
@@ -61,3 +51,4 @@ body {
 @import "storm-background";
 @import "banner";
 @import "intro-quote";
+@import "title-jumbotron";
