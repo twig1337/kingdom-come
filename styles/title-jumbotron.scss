@@ -1,4 +1,56 @@
 #title-container {
   text-align: center;
-  font-family: 'Exo-thin-italic', serif;
+  vertical-align: middle;
+  letter-spacing: 10px;
+  font-family: 'Cinzel', serif;
+
+  .col {
+    @extend .border-secondary-top;
+    padding-top: 100px;
+
+    #title-content {
+      margin: 0 auto;
+      padding: 20px;
+      width: 845px;
+      position: relative;
+      overflow: hidden;
+
+      > #title-content-border {
+        &-top {
+          visibility: hidden;
+
+          position: absolute;
+          top: 0;
+
+          height: 100%;
+          width: 100%;
+
+          border-top: 2px solid gold;
+        }
+
+        &-bottom {
+          visibility: hidden;
+
+          position: absolute;
+          top: 0;
+
+          height: 100%;
+          width: 100%;
+
+          border-bottom: 2px solid gold;
+        }
+      }
+    }
+  }
+}
+
+.spark {
+  background-color: #DE4A00;
+  font-family: 'Helvetica', sans-serif;
+  visibility: hidden;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 30%;
+  box-shadow: 0 0 5px #AB000B;
 }

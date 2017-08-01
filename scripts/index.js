@@ -1,4 +1,4 @@
-/* global TimelineMax, Back, Power1 */
+/* global TimelineLite, Back, Power1, Linear */
 
 import './../index.html';
 import './../styles/main.scss';
@@ -7,28 +7,57 @@ import 'bootstrap';
 import 'gsap';
 import $ from 'jquery';
 import ScrollSpy from './scroll-spy';
+import Sparks from './sparks';
 
 const scrollSpy = new ScrollSpy();
-const introTimeline = new TimelineMax();
+const embers = new Sparks();
 
-let quoteLineOne = $('#intro-quote-line-one');
-scrollSpy.add(quoteLineOne, () =>
-  introTimeline
-    .to(quoteLineOne, 3, {
+$(function() {
+  embers.createParticle();
+});
+
+/*
+ * Fancy title animation.
+ */
+const titleTimeline = new TimelineLite();
+const titleContent = $('#title-content');
+const titleContentBorderTop = $('#title-content-border-top');
+const titleContentBorderBottom = $('#title-content-border-bottom');
+scrollSpy.add(titleContent, () => {
+  // Snag the width of the parent element so we know how far to slide our borders over for a proper intro.
+  let titleContainerWidth = titleContent.width() + 40;
+  titleContentBorderTop.width(titleContainerWidth);
+  titleContentBorderBottom.width(titleContainerWidth);
+
+  titleContentBorderTop.css({
+    left: -titleContainerWidth,
+    visibility: 'visible'
+  });
+  titleContentBorderBottom.css({
+    left: titleContainerWidth,
+    visibility: 'visible'
+  });
+
+  titleTimeline
+    .to(titleContentBorderTop, 2.5, {
+      x: titleContainerWidth,
+      ease: Linear.easeNone
+    })
+    .to(titleContentBorderBottom, 2.5, {
+      x: -titleContainerWidth,
+      ease: Linear.easeNone
+    }, '-=2.5')
+    .to($('#intro-quote-line-one'), 3, {
       x: -25,
       y: 10,
       opacity: 1,
       ease: Power1.easeOut
-    })
+    }, '+=0.5')
     .to($('#intro-quote-line-two'), 4, {
       opacity: 1,
       ease: Power1.easeOut
     }, '-=0.25')
     .to($('#demon-highlight'), 2, {
-      scale: 1.05,
-      rotation: 900,
-      x: 1000,
-      y: -1000,
       color: '#8A0707',
       ease: Power1.easeIn
     }, '-=2')
@@ -36,5 +65,5 @@ scrollSpy.add(quoteLineOne, () =>
       y: 10,
       opacity: 1,
       ease: Power1.easeOut
-    }, '+=1')
-);
+    }, '+=1');
+});
