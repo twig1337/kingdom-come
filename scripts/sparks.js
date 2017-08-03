@@ -5,8 +5,8 @@ export default class {
     let {density, speed} = arguments;
 
     let
-      winHeight = $('#title-content').height(),
-      winWidth = $('#title-content').width();
+      winHeight = window.innerHeight,
+      winWidth = window.innerWidth;
 
     this.density = density || 70;
     this.speed = speed || 0.5;
@@ -54,7 +54,7 @@ export default class {
     for (i = 0; i < this.density; i++) {
       particleSpark = document.createElement('div');
       particleSpark.classList.add('spark');
-      $('#title-content').append(particleSpark);
+      $('#title-content').after(particleSpark);
       this.spawn(particleSpark);
     }
   }
@@ -120,8 +120,7 @@ export default class {
       scale: this.range(this.end, 'scale'),
       autoAlpha: this.range(this.end, 'opacity'),
       ease: Linear.easeNone,
-      onComplete: this.spawn,
-      onCompleteParams: [particle]
+      onComplete: () => this.spawn(particle)
     });
   }
 }
