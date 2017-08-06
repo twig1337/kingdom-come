@@ -7,14 +7,8 @@ import 'bootstrap';
 import 'gsap';
 import $ from 'jquery';
 import ScrollSpy from './scroll-spy';
-import Sparks from './sparks';
 
 const scrollSpy = new ScrollSpy();
-const embers = new Sparks();
-
-$(function() {
-  embers.createParticle();
-});
 
 /*
  * Fancy title animation.
@@ -52,7 +46,7 @@ scrollSpy.add(titleContent, () => {
       y: 10,
       opacity: 1,
       ease: Power1.easeOut
-    }, '+=0.5')
+    }, '+=1')
     .to($('#intro-quote-line-two'), 4, {
       opacity: 1,
       ease: Power1.easeOut
@@ -66,4 +60,18 @@ scrollSpy.add(titleContent, () => {
       opacity: 1,
       ease: Power1.easeOut
     }, '+=1');
+}, {
+  offsetTop: 200
+});
+
+/*
+ * Fancy card animation.
+ */
+const characterCardsTimeline = new TimelineLite();
+scrollSpy.add($('#character-bios'), () => {
+  characterCardsTimeline
+    .staggerFrom($('#character-bios .col'), 1, {
+      bottom: -1000,
+      ease: Quart.easeOut
+    }, 0.5);
 });

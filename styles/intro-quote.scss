@@ -1,13 +1,13 @@
 #intro-quote-container {
   > .row {
     @extend .no-gutters;
-    @extend .bg-white;
 
     position: relative;
     overflow: hidden;
 
     height: 250px;
     padding: 50px 80px 30px 80px;
+    margin-bottom: 50px;
 
     font-family: 'Cinzel', serif;
     font-size: 26px;

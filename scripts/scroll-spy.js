@@ -13,9 +13,9 @@ export default class {
 
   /* Public */
 
-  add(reference, action) {
+  add(reference, action, options = {}) {
     if (!reference || !action) return;
-    this._watchedElements.push({ reference, action });
+    this._watchedElements.push({ reference, action, options });
   }
 
   /* Private */
@@ -25,12 +25,15 @@ export default class {
     const windowBottom = windowTop + this._window.height();
 
     this._watchedElements.forEach(element => {
-      let elementTop = element.reference.offset().top;
+      if (element.isComplete) return;
+
+      let elementTop = element.reference.offset().top + (element.options.offsetTop || 0);
       let elementBottom = (elementTop + element.reference.outerHeight());
 
       // Is the element within the viewport?
       if (elementBottom >= windowTop && elementTop <= windowBottom) {
-        element.action()
+        element.isComplete = true;
+        element.action();
       }
     });
   }
