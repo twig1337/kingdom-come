@@ -1,12 +1,18 @@
 /* global TimelineLite, Back, Power1, Linear */
 
+/* Application Sources */
 import './../index.html';
 import './../styles/main.scss';
 
+/* 3rd Party Libraries */
 import 'bootstrap';
 import 'gsap';
 import $ from 'jquery';
 import ScrollSpy from './scroll-spy';
+
+/* Kingdom Come Scripts */
+import stormRandomizer from './storm-randomizer';
+$(() => stormRandomizer());
 
 const scrollSpy = new ScrollSpy();
 

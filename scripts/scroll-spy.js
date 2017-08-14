@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 export default class {
   constructor() {
     this._window = $(window);

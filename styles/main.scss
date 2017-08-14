@@ -51,6 +51,8 @@ body {
 #content > .row {
   @extend .bg-carbon;
 
+  padding-bottom: 60px;
+
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
@@ -67,8 +69,16 @@ body {
   font-family: 'Cinzel', serif;
 }
 
-footer .col {
-  height: 100px;
+footer .row {
+  padding: 40px 0;
+
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+
+  background-color: #333333;
+
+  color: #747474;
+  font-size: 12px;
 }
 
 /* DEVELOPMENT */
