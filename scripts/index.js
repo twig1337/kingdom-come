@@ -69,15 +69,3 @@ scrollSpy.add(titleContent, () => {
 }, {
   offsetTop: 200
 });
-
-/*
- * Fancy card animation.
- */
-const characterCardsTimeline = new TimelineLite();
-scrollSpy.add($('#character-bios'), () => {
-  characterCardsTimeline
-    .staggerFrom($('#character-bios .col'), 1, {
-      bottom: -1000,
-      ease: Quart.easeOut
-    }, 0.5);
-});
