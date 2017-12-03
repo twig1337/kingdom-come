@@ -1,7 +1,6 @@
 // Preload images
 for (let i = 1; i <= 6; i++) {
-  let img = new Image();
-  img.src = `assets/img/vatican-storm-ease-${i}.jpg`
+  new Image().src = `assets/img/vatican-storm-ease-${i}.jpg`
 }
 
 const bg = $('#lightning-cover');

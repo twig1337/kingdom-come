@@ -21,3 +21,19 @@
     padding: 0;
   }
 }
+
+#sign-in-wrapper {
+  //display: none;
+
+  //background-color: #373737;
+  background-color: transparent;
+
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+
+  > .card {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}

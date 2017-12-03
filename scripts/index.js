@@ -1,4 +1,4 @@
-/* global TimelineLite, Back, Power1, Linear */
+/* global TimelineLite, TweenLite, Back, Power1, Linear */
 
 /* Application Sources */
 import './../index.html';
@@ -12,6 +12,7 @@ import ScrollSpy from './scroll-spy';
 
 /* Kingdom Come Scripts */
 import stormRandomizer from './storm-randomizer';
+
 $(() => stormRandomizer());
 
 const scrollSpy = new ScrollSpy();
@@ -19,7 +20,6 @@ const scrollSpy = new ScrollSpy();
 /*
  * Fancy title animation.
  */
-const titleTimeline = new TimelineLite();
 const titleContent = $('#title-content');
 const titleContentBorderTop = $('#title-content-border-top');
 const titleContentBorderBottom = $('#title-content-border-bottom');
@@ -38,7 +38,7 @@ scrollSpy.add(titleContent, () => {
     visibility: 'visible'
   });
 
-  titleTimeline
+  new TimelineLite()
     .to(titleContentBorderTop, 2.5, {
       x: titleContainerWidth,
       ease: Linear.easeNone
@@ -68,4 +68,29 @@ scrollSpy.add(titleContent, () => {
     }, '+=1');
 }, {
   offsetTop: 200
+});
+
+/*
+ * Sign in animation.
+ */
+const jumbotron = $('#jumbotron-wrapper');
+const banner = $('#banner-content');
+const signIn = $('#sign-in-wrapper');
+let showingLogin = false;
+$('#sign-in-button').click(() => {
+  TweenLite.to(jumbotron, 0.8, {
+    height: 0,
+    ease: Power4.easeInOut,
+    onComplete: () => {
+      banner.children('img').hide();
+      signIn.show();
+
+      TweenLite.to(jumbotron, 0.8, {
+        height: banner.outerHeight(),
+        ease: Power4.easeOut
+      });
+    }
+  });
+
+  showingLogin = !showingLogin;
 });
