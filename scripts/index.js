@@ -11,7 +11,10 @@ import $ from 'jquery';
 import ScrollSpy from './scroll-spy';
 
 /* Kingdom Come Scripts */
+import './about-the-author';
+
 import stormRandomizer from './storm-randomizer';
+
 $(() => stormRandomizer());
 
 const scrollSpy = new ScrollSpy();
@@ -39,33 +42,12 @@ scrollSpy.add(titleContent, () => {
   });
 
   titleTimeline
-    .to(titleContentBorderTop, 2.5, {
-      x: titleContainerWidth,
-      ease: Linear.easeNone
-    })
-    .to(titleContentBorderBottom, 2.5, {
-      x: -titleContainerWidth,
-      ease: Linear.easeNone
-    }, '-=2.5')
-    .to($('#intro-quote-line-one'), 3, {
-      x: -25,
-      y: 10,
-      opacity: 1,
-      ease: Power1.easeOut
-    }, '+=1')
-    .to($('#intro-quote-line-two'), 4, {
-      opacity: 1,
-      ease: Power1.easeOut
-    }, '-=0.25')
-    .to($('#demon-highlight'), 2, {
-      color: '#8A0707',
-      ease: Power1.easeIn
-    }, '-=2')
-    .to($('#intro-quote-citation'), 4, {
-      y: 10,
-      opacity: 1,
-      ease: Power1.easeOut
-    }, '+=1');
+    .to(titleContentBorderTop, 2.5, { x: titleContainerWidth, ease: Linear.easeNone })
+    .to(titleContentBorderBottom, 2.5, { x: -titleContainerWidth, ease: Linear.easeNone }, '-=2.5')
+    .to($('#intro-quote-line-one'), 3, { x: -25, y: 10, opacity: 1, ease: Power1.easeOut }, '+=1')
+    .to($('#intro-quote-line-two'), 4, { opacity: 1, ease: Power1.easeOut }, '-=0.25')
+    .to($('#demon-highlight'), 2, { color: '#8A0707', ease: Power1.easeIn }, '-=2')
+    .to($('#intro-quote-citation'), 4, { y: 10, opacity: 1, ease: Power1.easeOut }, '+=1');
 }, {
   offsetTop: 200
 });
