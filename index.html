@@ -40,8 +40,8 @@
       <div class="navbar-nav">
         <!-- TODO: Use the DH Database to house the short stories.  -->
         <!--<a class="nav-item nav-link" href="#">DH Database</a>-->
-        <a id="about-the-author-btn" class="nav-item nav-link" href="#">About the Author</a>
         <a id="purchase-btn" class="nav-item nav-link" href="#">Purchase</a>
+        <a id="about-the-author-btn" class="nav-item nav-link" href="#">About the Author</a>
       </div>
     </div>
   </nav>
@@ -107,7 +107,9 @@
       </svg>
 
       <div id="about-the-author" style="display: none;">
-        <img src="/assets/img/justin.jpg" alt="Justin Coogle" class="img-fluid">
+        <a href="https://www.amazon.com/-/e/B0785HFZJ3">
+          <img src="/assets/img/justin.jpg" alt="Justin Coogle" class="img-fluid">
+        </a>
         <div>
           <p>Justin Coogle was born in Texarkana, Texas. Most of his childhood was spent in Fort Leavenworth, and he
             went on to attend the University of Kansas to earn an undergraduate in Japanese. He is currently a 3rd year
@@ -150,10 +152,10 @@
         <div class="row">
           <div class="col">
             <div id="intro-quote-line-one">A great king rules from within a great castle . . .</div>
-            <div id="intro-quote-line-two">. . . but a great
+            <div id="intro-quote-line-two">
+              . . . but a great
               <div id="demon-highlight">demon</div>
-              rules from within a great
-              king.
+              rules from within a great king.
             </div>
             <div id="intro-quote-citation">- Michael Vittner <cite title="Kingdom Come">Kingdom Come</cite></div>
           </div>
@@ -161,7 +163,26 @@
       </div>
 
       <div id="purchase">
-        <img src="/dev-assets/img/quartet.jpg" alt="The Crew">
+        <div class="cross">
+          <img src="/assets/img/cross.png" alt="Cross">
+        </div>
+
+        <div class="books">
+          <div class="book">
+            <a href="https://www.amazon.com/Kingdom-Come-Justin-Coogle-ebook/dp/B077XM5JMK/ref=asap_bc?ie=UTF8">
+              <img src="/assets/img/book-cover.jpg" alt="Kingdom Come">
+            </a>
+          </div>
+          <div class="book">
+            <a href="https://www.amazon.com/DH-Database-Vol-collection-Kingdom-ebook/dp/B078368KBM/ref=asap_bc?ie=UTF8">
+              <img src="/assets/img/short-stories-cover.jpg" alt="Kingdom Come - Short Stories">
+            </a>
+          </div>
+        </div>
+
+        <div class="cross">
+          <img src="/assets/img/cross.png" alt="Cross">
+        </div>
       </div>
     </div>
   </div>
@@ -178,5 +199,6 @@
 
 <!-- JavaScript dependencies -->
 <script src="bundle.js" type="text/javascript" charset="utf-8"></script>
+<script src="scripts/modernizer.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

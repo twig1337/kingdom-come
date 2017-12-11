@@ -1,3 +1,7 @@
+// Preload images
+new Image().src = `assets/img/justin.jpg`;
+new Image().src = `assets/img/justin-derp.jpg`;
+
 const
   aboutTheAuthorBtn = $('#about-the-author-btn'),
   aboutTheAuthor = $('#about-the-author'),
@@ -23,11 +27,11 @@ aboutTheAuthorBtn.click(() => {
       .to(dhNeArc, 1, { autoAlpha: 0.2 }, '-=1')
       .to(dhSeArc, 1, { autoAlpha: 0.2 }, '-=1')
       .to(dhSwArc, 1, { autoAlpha: 0.2 }, '-=1')
-      .to(dhNwArc, 2, { x: -750, y: -750, ease: Power1.easeInOut }, '-=1')
-      .to(dhNeArc, 2, { x: 750, y: -750, ease: Power1.easeInOut }, '-=2')
-      .to(dhSeArc, 2, { x: 750, y: 750, ease: Power1.easeInOut }, '-=2')
-      .to(dhSwArc, 2, { x: -750, y: 750, ease: Power1.easeInOut }, '-=2')
-      .to(aboutTheAuthor, 2, { opacity: 1 })
+      .to(dhNwArc, 1, { x: -750, y: -750, ease: Power1.easeInOut }, '-=1')
+      .to(dhNeArc, 1, { x: 750, y: -750, ease: Power1.easeInOut }, '-=1')
+      .to(dhSeArc, 1, { x: 750, y: 750, ease: Power1.easeInOut }, '-=1')
+      .to(dhSwArc, 1, { x: -750, y: 750, ease: Power1.easeInOut }, '-=1')
+      .to(aboutTheAuthor, 1, { opacity: 1 })
       .to(dhLogo, 10, {
         rotation: 360,
         transformOrigin: "150px 90px",
@@ -35,7 +39,7 @@ aboutTheAuthorBtn.click(() => {
         yoyo: true,
         ease: Sine.easeInOut
       }, '-=1.5')
-      .to(dhLogo, 3, { y: 100 }, '-=12');
+      .to(dhLogo, 3, { y: 100 }, '-=10');
   } else {
     new TimelineLite()
       .to(aboutTheAuthor, 1, { opacity: 0 })

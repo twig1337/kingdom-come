@@ -61,6 +61,7 @@ body {
 @import "banner";
 @import "intro-quote";
 @import "title-jumbotron";
+@import "purchase";
 
 /* Specific Misc. */
 .navbar {
@@ -76,39 +77,4 @@ footer .row {
 
   color: #747474;
   font-size: 12px;
-}
-
-/* DEVELOPMENT */
-#enter {
-  width: 100%;
-  opacity: 0.5;
-  background-image: url("/dev-assets/img/quartet.jpg");
-  background-size: 100% 100%;
-  box-shadow: 0px 20px 20px #5e5e5e inset;
-  filter: grayscale(60%);
-  position: relative;
-
-  img {
-    opacity: 0;
-    width: 100%;
-  }
-
-  &::before {
-    content: 'Are you prepared?';
-    color: white !important;
-    font-size: 60px;
-    font-family: 'Cinzel', serif;
-    
-    height: 20px;
-    width: 800px;
-
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-
-    text-align: center;
-  }
 }

@@ -51,3 +51,18 @@ scrollSpy.add(titleContent, () => {
 }, {
   offsetTop: 200
 });
+
+/*
+ * Purchase
+ */
+const purchase = $('#purchase');
+$('#purchase-btn').click(() => {
+  $('html, body').animate({ scrollTop: purchase.offset().top + 30 });
+});
+
+const books = $('#purchase .book');
+books.hover(function () {
+  TweenMax.to(this, 1, { y: -10, ease: Power1.easeInOut, repeat: -1, yoyo: true });
+}, function () {
+  TweenMax.to(this, 1, { y: 0, ease: Power1.easeInOut });
+});

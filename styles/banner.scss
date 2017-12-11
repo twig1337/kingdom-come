@@ -36,15 +36,18 @@
 
     opacity: 0;
 
-    > img {
+    a {
       width: 40%;
 
-      opacity: 0.8;
-      border-radius: 10px;
-      border: 2px solid #04fcff;
+      img {
+        width: 100%;
+        opacity: 0.8;
+        border-radius: 10px;
+        border: 2px solid #04fcff;
 
-      &:hover {
-        content: url("/assets/img/justin-derp.jpg");
+        &:hover {
+          content: url("/assets/img/justin-derp.jpg");
+        }
       }
     }
 
