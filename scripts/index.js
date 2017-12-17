@@ -1,8 +1,7 @@
 /* global TimelineLite, Back, Power1, Linear */
 
 /* Application Sources */
-import './../index.html';
-import './../styles/main.scss';
+import '../styles/index.scss';
 
 /* 3rd Party Libraries */
 import 'bootstrap';

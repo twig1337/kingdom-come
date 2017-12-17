@@ -1,6 +1,9 @@
+import justin from '../assets/img/justin.jpg';
+import justinDerp from '../assets/img/justin-derp.jpg';
+
 // Preload images
-new Image().src = `assets/img/justin.jpg`;
-new Image().src = `assets/img/justin-derp.jpg`;
+new Image().src = justin;
+new Image().src = justinDerp;
 
 const
   aboutTheAuthorBtn = $('#about-the-author-btn'),
